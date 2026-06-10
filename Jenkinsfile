@@ -49,6 +49,12 @@ pipeline {
                 bat 'docker build -t travel-planner-frontend ./frontend'
             }
         }
+        stage('Docker Push') {
+    steps {
+        bat 'docker tag travel-planner-frontend yashaswinis4/travel-planner:latest'
+        bat 'docker push yashaswinis4/travel-planner:latest'
+    }
+}
 
     }
 
